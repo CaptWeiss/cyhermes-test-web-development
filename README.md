@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Demo Web page Development for Cyhermes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using Typescript.
+
 
 ## Available Scripts
 
@@ -23,3 +24,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Given design
+
+![alt Design](https://github.com/CaptWeiss/cyhermes-test-web-development/blob/main/resources/02-onboarding-setup.png?raw=true)
+
+## Finished: Development done within 48 Hours from reception time...
+![alt screenshot1](https://github.com/CaptWeiss/cyhermes-test-web-development/blob/main/resources/completed_screenshot1.png?raw=true)
+![alt screenshot2](https://github.com/CaptWeiss/cyhermes-test-web-development/blob/main/resources/completed_screenshot2.png?raw=true)
+![alt screenshot3](https://github.com/CaptWeiss/cyhermes-test-web-development/blob/main/resources/completed_screenshot3.png?raw=true)
