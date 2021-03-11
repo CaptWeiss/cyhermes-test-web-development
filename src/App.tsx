@@ -13,10 +13,13 @@ const useStyles = makeStyles(theme => createStyles({
   container: {
     height: '100vh',
     // width: '100vw',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   mainBody: {
     padding: '3% 10%',
+    right: 0,
+    top: 0,
+    position: 'absolute',
   },
   sideNav: {
     paddingRight: '8vw',
@@ -24,6 +27,10 @@ const useStyles = makeStyles(theme => createStyles({
     color: '#A7A6A6',
     display: 'flex',
     flexDirection: 'column',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    height: '100vh',
     "&>.gbayesile": {
       flexGrow: 1,
     },
@@ -120,20 +127,6 @@ const useStyles = makeStyles(theme => createStyles({
       display: 'block',
     },
   },
-  // "quote-section": {
-    // display: 'flex',
-    // justifyContent: 'flex-end',
-    // alignItems: 'center',
-    // width: '100%',
-    // height: '40%',
-    // "&>>.main-module": {
-    //   // border: '2px solid #A7A6A6',
-    //   position: 'relative',
-    //   padding: '10px 30px',
-    //   margin: '0 15px',
-    //   textDecoration: 'none',
-    // },
-  // },
 }))
 
 

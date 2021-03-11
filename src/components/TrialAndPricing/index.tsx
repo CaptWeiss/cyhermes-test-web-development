@@ -1,7 +1,10 @@
-import InfoIcon from '@material-ui/icons/Info';
 import React, { useState } from 'react'
 import {PriceFormat} from '../formatAmt';
 import './index.css';
+import InfoIcon from '@material-ui/icons/Info';
+import { withStyles,makeStyles } from '@material-ui/core/styles';
+import Slider from '@material-ui/core/Slider';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 interface IModules {
     id: string,
@@ -54,13 +57,62 @@ const modules: IModules[] = [
     }
 ]
 
+const useStyles = makeStyles({
+    root: {
+        width: '3em',
+        height: '3em'
+    },
+});
+
 const TrialAndPricing = () => {
     const [selectedModuleID, setSelectedModuleID] = useState<string>('A101') ;
+    const c = useStyles() ;
+
+    const SlideInput = withStyles({
+        root: {
+            color: '#4982ff',
+            height: 8,
+        },
+        thumb: {
+            height: 18,
+            width: 18,
+            backgroundColor: '#fff',
+            border: '6px solid currentColor',
+            marginTop: -8,
+            marginLeft: -12,
+            '&:focus, &:hover, &$active': {
+                boxShadow: 'inherit',
+            },
+        },
+        active: {},
+        valueLabel: {
+            left: 'calc(-50% + 4px)',
+        },
+        track: {
+            height: 5,
+            borderRadius: 4,
+        },
+        rail: {
+            height: 3,
+            borderRadius: 4,
+        },
+    })(Slider);
+
+    const marks = [
+        {
+            value: 0,
+            label: "0"
+        },{
+            value: 1000,
+            label: ">1000"
+        }
+    ]
 
     const includes = ['25 Users', 'All modules and features', 'Unlimited commitees', 'Unlimited roles creation'] ;
 
     return (
         <div className='container' >
+
             <div className='heading' >
                 <div className='wrapper11' >
                     <p id='greetings' >Hey, Terry</p>
@@ -73,6 +125,7 @@ const TrialAndPricing = () => {
                     <p id='details' >Total <span>(EXCLUDES VAT)</span> </p>
                 </div>
             </div>
+
             <div className='cards' >
                 <div className='floating-card' >
                     <div>
@@ -86,7 +139,9 @@ const TrialAndPricing = () => {
                         <p id='users-count' >100 Users <span>.</span> All Modules </p>
                     </div>
                 </div>
+                
                 <div className='card' >
+                    <CheckCircleIcon classes={{root:c.root}} className='check-badge' />
                     <div>
                         <h3>Basic</h3>
                         <p> <span>30 days trials</span> on our premium app features and features </p>
@@ -105,15 +160,17 @@ const TrialAndPricing = () => {
                     </div>
                 </div>
             </div>
+
             <div className='user-slider' >
                 <div>
                     <p>Add more users</p>
                     <p> NGN{PriceFormat.format(99999)} <span>per user</span> </p>
                 </div>
                 <div>
-                    <input type="range" name="addUser" id="add-user-slider"/>
+                    <SlideInput max={1000} marks={marks} valueLabelDisplay="auto" aria-label="slide input" defaultValue={100} />
                 </div>
             </div>
+
             <div className='all-modules' >
                 <div className='header-wrapper' >
                     <p>ALL MODULES</p>
@@ -132,11 +189,12 @@ const TrialAndPricing = () => {
                     }
                 </div>
             </div>
+
             <div className='action-area' >
                 <a href="/#">Go Back</a>
-                {/* <Button variant='contained' color='secondary' >Continue</Button> */}
                 <button >Continue</button>
             </div>
+
         </div>
     )
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './index.css';
 
 const index = () => {
-    
+
     return (
-        <div>
+        <div className='pm-container' >
             Nothing to Display
         </div>
     )

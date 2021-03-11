@@ -47,6 +47,7 @@
     font-weight: bold;
 }
 .cards {
+    margin: 3em 0;
     height: 400px;
     display: flex;
     justify-content: space-between;
@@ -91,6 +92,7 @@
     -webkit-text-security: disc;
 }
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -101,6 +103,12 @@
     padding: 1.5em;
     background-color: #c9dbff69;
     color: #a7a6a6;
+}
+.check-badge {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    color: #94E1B3;
 }
 .card>div>h3 {
     font-weight: 900;
@@ -128,7 +136,7 @@
     position: relative;
 }
 #includes::after {
-    content:"-----------------------";
+    content:"---------------";
     width: 0.3em;
     height: 40px;
     color: #4982ff;
@@ -149,6 +157,7 @@
     margin: 3px;
     padding: 2px;
     align-items: center;
+    cursor: pointer;
 }
 
 .img-size {
@@ -220,4 +229,16 @@
 .infoIcon {
     margin: 2em;
     color: #ffca00;
+}
+
+.user-slider {
+    line-height: 0px;
+}
+.user-slider > div > p {
+    font-weight: 900;
+    font-size: 1em;
+}
+.user-slider > div > p > span {
+    font-size: 0.8em;
+    font-weight: 0%;
 }
